@@ -1,8 +1,3 @@
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
-import MenuItem from '@material-ui/core/MenuItem';
-import MenuList from '@material-ui/core/MenuList';
-import Paper from '@material-ui/core/Paper';
-import Popper from '@material-ui/core/Popper';
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
@@ -30,35 +25,12 @@ const getRoutes = () => {
   return ROUTES_SOLANA;
 };
 
-const OTHER_LAYOUT_ROUTES = [
-  { url: RouteName.customToken, name: 'Custom Token Marketplace' },
-  { url: RouteName.multipleCollection, name: 'Multi Collection Marketplace' },
-  { url: RouteName.marketplaceWithUrl, name: 'Marketplace With URL' },
-  { url: RouteName.activityView, name: 'Marketplace Activity' },
-];
-
 const TopNav: React.FC = () => {
-  const [open, setOpen] = useState(false);
+  const [open] = useState(false);
   const anchorRef = useRef<HTMLLIElement>(null);
-  const blockchain = getBlockchain(NETWORK);
 
   const { pathname } = useLocation();
 
-  const handleToggle = () => {
-    setOpen((prevOpen) => !prevOpen);
-  };
-
-  const handleClose = (event: any) => {
-    if (anchorRef.current?.contains(event.target)) return;
-    setOpen(false);
-  };
-
-  const handleListKeyDown = (event: any) => {
-    if (event.key === 'Tab') {
-      event.preventDefault();
-      setOpen(false);
-    }
-  };
 
   // return focus to the button when we transitioned from !open -> open
   const prevOpen = useRef(open);
@@ -97,34 +69,6 @@ const HeaderBar = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 30px;
-`;
-
-const DropdownAnchor = styled.li`
-  cursor: pointer;
-  transition: color 0.3s;
-
-  &:hover,
-  &:active {
-    color: rgb(131, 146, 161);
-    border-bottom: 4px solid var(--title-text-color);
-  }
-
-  > div {
-    z-index: 1000;
-  }
-
-  .MuiList-root {
-    margin-top: 15px;
-  }
-  a {
-    padding-top: 4px;
-    padding-bottom: 4px;
-
-    &:hover {
-      border-bottom: 0px;
-      color: #fff;
-    }
-  }
 `;
 
 const Wallet = styled.ul`
