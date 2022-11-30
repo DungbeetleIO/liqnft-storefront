@@ -7,7 +7,7 @@
   --card-background-color: #51576d;
   --card-background-lighter-color: #7a7f92;
   --main-text-color: #f7f6f4;
-  --title-text-color: #3cba8b;
+  --title-text-color: #004a97;
 }
 
 body {
@@ -50,4 +50,23 @@ h3 {
 
 .css-1ago99h {
   color: black;
+}
+
+.candy-status-tag{
+  background-color: #004a97;
+}
+
+.candy-button {
+  background: #004a97;
+}
+
+.candy-powered-by-buy{
+  color: #004a97;
+}
+.candy-powered-by{
+  color: #004a97;
+}
+
+.candy-link{
+  color: #004a97;
 }

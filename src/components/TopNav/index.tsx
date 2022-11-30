@@ -20,8 +20,6 @@ const ROUTES_ETH = [
 const ROUTES_SOLANA = [
   { url: RouteName.home, name: 'Marketplace' },
   { url: RouteName.sell, name: 'Sell' },
-  { url: RouteName.auctionsView, name: 'Auctions' },
-  { url: RouteName.drop, name: 'Edition Drops' },
 ];
 
 const getRoutes = () => {
@@ -84,37 +82,6 @@ const TopNav: React.FC = () => {
             <Link to={item.url}>{item.name}</Link>
           </li>
         ))}
-        {blockchain === BlockchainType.SOL && (
-          <DropdownAnchor
-            ref={anchorRef}
-            onClick={handleToggle}
-            className={OTHER_LAYOUT_ROUTES.some((item) => item.url === pathname) ? 'active' : ''}
-          >
-            Other Layouts
-            <Popper
-              open={open}
-              anchorEl={anchorRef.current}
-              role={undefined}
-              transition
-              disablePortal
-            >
-              <Paper>
-                <ClickAwayListener onClickAway={handleClose}>
-                  <MenuList autoFocusItem={open} onKeyDown={handleListKeyDown}>
-                    {OTHER_LAYOUT_ROUTES.map((item) => (
-                      <MenuItem
-                        className={item.url === pathname ? 'active active-submenu' : ''}
-                        key={item.url}
-                      >
-                        <Link to={item.url}>{item.name}</Link>
-                      </MenuItem>
-                    ))}
-                  </MenuList>
-                </ClickAwayListener>
-              </Paper>
-            </Popper>
-          </DropdownAnchor>
-        )}
       </Menu>
       <Wallet>
         <ConnectButton />
