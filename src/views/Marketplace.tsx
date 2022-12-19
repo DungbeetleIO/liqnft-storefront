@@ -16,7 +16,7 @@ const Marketplace: React.FC = () => {
         candyShop={candyShop}
         title={'Dungbeetle'}
         description={
-          'The planet has had enough of greenwashing and politicians that are unable to read from their teleprompters. We are as frustrated as you are about all the bullshit. So we decided it is time to take action into our own hands and help you to do the same.'
+          'Dungbeetle is a marketplace where good money finds good people delivering positive change to the world.'
         }
         style={{ paddingBottom: 50 }}
       />
